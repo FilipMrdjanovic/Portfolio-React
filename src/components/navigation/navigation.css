@@ -1,0 +1,11 @@
+.buton-hover {
+    background: none !important;
+    border-style: outset !important;
+    outline: none !important;
+    padding: 0 14px;
+    border: 0;
+    transition: .3s;
+}
+.buton-hover:hover {
+    color: #60d9c3 !important;
+}
