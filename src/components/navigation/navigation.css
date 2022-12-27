@@ -9,3 +9,11 @@
 .buton-hover:hover {
     color: #60d9c3 !important;
 }
+
+.logo:hover{
+    cursor: pointer;
+}
+
+button {
+    font-family: 'Montserrat', sans-serif;
+}

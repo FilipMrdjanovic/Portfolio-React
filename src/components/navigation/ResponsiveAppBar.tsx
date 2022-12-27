@@ -23,6 +23,8 @@ interface Props {
    */
   setPage: Function
   currentPage: number
+  activePage: string
+  setActivePage: Function
   window?: () => Window;
 }
 
@@ -30,9 +32,8 @@ const drawerWidth = 240;
 const navItems = ['HOME', 'ABOUT', 'WORK', 'CONTACT'];
 
 export default function ResponsiveAppBar(props: Props) {
-  const { setPage, currentPage, window } = props;
+  const { setPage, currentPage, activePage, setActivePage, window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [activePage, setActivePage] = useState('')
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -40,8 +41,8 @@ export default function ResponsiveAppBar(props: Props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }} onClick={() => setPage(0)}>
-        <img src="FM-logo.png" alt="" style={{width: '70px', alignItems: 'center'}} />
+      <Typography variant="h6" sx={{ my: 2}} onClick={() => setPage(0)}>
+        <img src="FM-logo.png" alt="" style={{width: '70px', alignItems: 'center'}} className="logo"/>
       </Typography>
       <Divider />
       <List>
@@ -58,23 +59,27 @@ export default function ResponsiveAppBar(props: Props) {
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
-  useEffect(() => {
-    switch(currentPage){
-      case 0:
-        setActivePage('HOME')  
-      break;
-      case 1:
-        setActivePage('ABOUT')  
-      break;
-      case 2:
-        setActivePage('WORK')  
-      break;
-      case 3:
-        setActivePage('CONTACT')  
-      break;
-    }
-  }, [currentPage, activePage])
+  // useEffect(() => {
+  //   switch(currentPage){
+  //     case 0:
+  //       setActivePage('HOME')  
+  //     break;
+  //     case 1:
+  //       setActivePage('ABOUT')  
+  //     break;
+  //     case 2:
+  //       setActivePage('WORK')  
+  //     break;
+  //     case 3:
+  //       setActivePage('CONTACT')  
+  //     break;
+  //   }
+  // }, [currentPage, activePage])
   
+  // useEffect(() => {
+  // }, [])
+  
+
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -95,6 +100,7 @@ export default function ResponsiveAppBar(props: Props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
             onClick={() => setPage(0)}
+            className="logo"
           >
           <img src="FM-logo.png" alt="" style={{width: '50px', alignItems: 'center'}}/>
           </Typography>

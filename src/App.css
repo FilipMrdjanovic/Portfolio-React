@@ -147,6 +147,13 @@ body {
   font-weight: 300;
 
   background: linear-gradient(126deg, rgba(61, 61, 61, 1) 16%, rgba(33, 33, 33, 1) 72%);
+  /* font-family: 'Lora', serif; */
+}
+
+h1, h2, h3, h4, h5, h6 {
+ font-family: 'Montserrat', sans-serif;
+ font-weight: 300;
+ text-transform: uppercase;
 }
 
 .component {

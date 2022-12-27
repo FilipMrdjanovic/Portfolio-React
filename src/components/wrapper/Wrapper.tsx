@@ -2,18 +2,34 @@ import React, {useEffect, useState} from 'react';
 import ReactPageScroller from 'react-page-scroller';
 import axios from 'axios';
 import ResponsiveAppBar from '../navigation/ResponsiveAppBar';
+import './style.css'
 
 export default function Wrapper() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([])
   const [currentPage, setCurrentPage] = useState(Number)
+  const [activePage, setActivePage] = useState('HOME')
 
   const handlePageChange = (number: any) => {
     setCurrentPage(number);
   };
 
   const handleBeforePageChange = (number: any) => {
-    // console.log(number);
+    switch(number){
+      case 0:
+        setActivePage('HOME')  
+      break;
+      case 1:
+        setActivePage('ABOUT')  
+      break;
+      case 2:
+        setActivePage('WORK')  
+      break;
+      case 3:
+        setActivePage('CONTACT')  
+      break;
+    }
+    
   };
 
   const getData = async () => {
@@ -38,13 +54,13 @@ export default function Wrapper() {
 
   useEffect(() => {
     getData()
-  }, [])
+  }, [activePage])
 
   
 
   return (
     <>
-    <ResponsiveAppBar setPage={setCurrentPage} currentPage={currentPage}/>
+    <ResponsiveAppBar setPage={setCurrentPage} currentPage={currentPage} activePage={activePage} setActivePage={setActivePage}/>
 
     <ReactPageScroller
       pageOnChange={handlePageChange}
@@ -52,7 +68,6 @@ export default function Wrapper() {
       customPageNumber={currentPage}
       >
         <div className="component">
-          <h2>First Component</h2>
           {/* <div>
             {data && data.map((item: any) => (
               <div key={item.id}>
@@ -60,6 +75,10 @@ export default function Wrapper() {
               </div>
             ))}
           </div> */}
+          <div className='container'>
+
+            <h2>First Component</h2>
+          </div>
         </div>
         <div className="component">
           <h2>Second Component</h2>

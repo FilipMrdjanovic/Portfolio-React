@@ -1,0 +1,10 @@
+.container{
+    margin: 8% auto;
+    height: 80%;
+    width: 80%;
+    background: red !important;
+    transform: none !important;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
