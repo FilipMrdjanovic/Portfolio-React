@@ -11,10 +11,11 @@ export default function Wrapper() {
   const [activePage, setActivePage] = useState('HOME')
 
   const handlePageChange = (number: any) => {
+    changeActivePage(number)
     setCurrentPage(number);
   };
 
-  const handleBeforePageChange = (number: any) => {
+  function changeActivePage(number: any){
     switch(number){
       case 0:
         setActivePage('HOME')  
@@ -29,7 +30,10 @@ export default function Wrapper() {
         setActivePage('CONTACT')  
       break;
     }
-    
+  }
+
+  const handleBeforePageChange = (number: any) => {
+    // changeActivePage(number) 
   };
 
   const getData = async () => {
@@ -76,18 +80,23 @@ export default function Wrapper() {
             ))}
           </div> */}
           <div className='container'>
-
-            <h2>First Component</h2>
+            <h2>Home</h2>
           </div>
         </div>
         <div className="component">
-          <h2>Second Component</h2>
+          <div className='container'>
+            <h2>About me</h2>
+          </div>
         </div>
         <div className="component">
-          <h2>Third Component</h2>
+          <div className='container'>
+            <h2>Work</h2>
+          </div>
         </div>
         <div className="component">
-          <h2>Fourth Component</h2>
+          <div className='container'>
+            <h2>Contact</h2>
+          </div>
         </div>
       </ReactPageScroller>
     </>
