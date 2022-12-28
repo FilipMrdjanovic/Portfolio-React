@@ -3,7 +3,54 @@
     height: 80%;
     width: 80%;
     transform: none !important;
+    flex-direction: row-reverse;
     display: flex;
     align-items: center;
     vertical-align: middle;
 }
+
+.container .title {
+    margin-right: -10%;
+    z-index: 1;
+    font-size: 60px;
+}
+
+.container .title h2 {
+    font-size: 60px;
+    color: white;
+}
+
+.home-bg{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: row-reverse;
+    border-radius: 0;
+}
+
+.home-bg .title{
+    position: absolute;
+    display: flex;
+    left: 5%;
+    top: 35%;
+}
+.home-bg img{
+    border-radius: 0;
+    height: 100%;
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+    .home-bg{
+        /* flex-direction: row; */
+    }
+ }
+/* 
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... } */

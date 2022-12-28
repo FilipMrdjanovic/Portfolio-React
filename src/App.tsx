@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import Wrapper from './components/wrapper/Wrapper';
 import { Routes, Route, Link } from "react-router-dom";
-import Page from './components/page/Page';
+import PageRouter from './components/page/PageRouter';
 
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
     //   <Route path="/page" element={<Page />} />
     // </Routes>
     // </>
-    <Page />
+    <PageRouter />
   );
 }
 

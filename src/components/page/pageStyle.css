@@ -1,0 +1,4 @@
+img:not(.home-bg){
+    height: 100%;
+    border-radius: 20px;
+}

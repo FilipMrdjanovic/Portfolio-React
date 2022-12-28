@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import ReactPageScroller from 'react-page-scroller';
 import axios from 'axios';
 import ResponsiveAppBar from '../navigation/ResponsiveAppBar';
+import Page from '../page/Page';
 import './style.css'
 
 export default function Wrapper() {
@@ -71,7 +72,14 @@ export default function Wrapper() {
       onBeforePageScroll={handleBeforePageChange}
       customPageNumber={currentPage}
       >
-        <div className="component">
+        <div className='home-bg'>
+          <img src="/images/home-background.png" alt="" />
+            <div className='title'>
+                <h2>About me</h2>
+            </div>
+        </div>
+        {/* <div className="component"> */}
+          
           {/* <div>
             {data && data.map((item: any) => (
               <div key={item.id}>
@@ -79,15 +87,12 @@ export default function Wrapper() {
               </div>
             ))}
           </div> */}
-          <div className='container'>
+
+          {/* <div className='container'>
             <h2>Home</h2>
           </div>
-        </div>
-        <div className="component">
-          <div className='container'>
-            <h2>About me</h2>
-          </div>
-        </div>
+        </div> */}
+        <Page title='About Me' description='about me text' image='/images/book.png' pageNumber='01'/>
         <div className="component">
           <div className='container'>
             <h2>Work</h2>

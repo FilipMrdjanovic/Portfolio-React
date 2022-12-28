@@ -1,17 +1,22 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Wrapper from '../wrapper/Wrapper';
-import AboutPage from './about/AboutPage';
+import './pageStyle.css'
 
-export default function Page() {
+interface Props{
+    title: string
+    pageNumber: string
+    description: string
+    image: string
+}
+
+export default function Page({title, pageNumber, description, image}: Props) {
   return (
-    <div>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Wrapper />} />
-          <Route path="/about" element={<AboutPage />} />
-        </Routes>
-      </Router>
+    <div className="component">
+        <div className='container'>
+            <img alt="" src={image}/>
+            <div className='title'>
+                <h2>About me</h2>
+            </div>
+        </div>
     </div>
-  );
+  )
 }
