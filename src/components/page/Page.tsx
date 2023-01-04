@@ -11,12 +11,11 @@ interface Props{
 export default function Page({title, pageNumber, description, image}: Props) {
   return (
     <div className="component">
-        <div className='container'>
-            <img alt="" src={image}/>
+        <div className='page' style={{background: `url(${image})`}}>
             <div className='title'>
-                <h2>About me</h2>
+                <h2>{title}</h2>
             </div>
         </div>
-    </div>
+        </div>
   )
 }

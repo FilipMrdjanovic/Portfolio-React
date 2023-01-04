@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Wrapper from '../wrapper/Wrapper';
-import AboutPage from './about/AboutPage';
+import WorkPage from './work/WorkPage';
 
 export default function PageRouter() {
   return (
@@ -9,7 +9,7 @@ export default function PageRouter() {
       <Router>
         <Routes>
           <Route path="/" element={<Wrapper />} />
-          <Route path="/about" element={<AboutPage />} />
+          <Route path="/work" element={<WorkPage />} />
         </Routes>
       </Router>
     </div>

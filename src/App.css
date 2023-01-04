@@ -147,8 +147,13 @@ body {
   font-weight: 300;
   overflow: hidden;
 
-  background: linear-gradient(126deg, rgba(61, 61, 61, 1) 16%, rgba(33, 33, 33, 1) 72%);
+  /* background: linear-gradient(126deg, rgba(61, 61, 61, 1) 16%, rgba(33, 33, 33, 1) 72%); */
   /* font-family: 'Lora', serif; */
+  background-color: #03272e;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -162,10 +167,24 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
 }
+/* .component > *:not(.home-bg){
+  align-items: center;
+  margin: 0 auto;
+  vertical-align: middle;
+  
+  transform: translateY(64px);
+} */
+
 .component > *{
   align-items: center;
   margin: 0 auto;
   vertical-align: middle;
   
-  transform: translateY(calc(50% - 64px));
+  /* transform: translateY(64px); */
+}
+
+@media (max-width: 600px) { 
+  .component > *{
+    transform: none;
+  }
 }

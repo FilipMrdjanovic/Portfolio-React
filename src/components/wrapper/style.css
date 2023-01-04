@@ -20,23 +20,26 @@
     color: white;
 }
 
-.home-bg{
+.home-bg, .page{
     display: flex;
     height: 100%;
     width: 100%;
     flex-direction: row-reverse;
     border-radius: 0;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
 }
 
 .home-bg .title{
-    position: absolute;
+    /* position: absolute;
     display: flex;
     left: 5%;
-    top: 35%;
+    top: 35%; */
 }
 .home-bg img{
     border-radius: 0;
-    height: 100%;
+    /* height: 100%; */
 }
 
 /* // Small devices (landscape phones, 576px and up) */
